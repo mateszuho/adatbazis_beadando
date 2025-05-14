@@ -1,0 +1,42 @@
+Autókereskedés adatbázis leírás
+
+Ez az adatbázis egy autókereskedéssel foglalkozó cég adatbázisát mutatja be. Az adatbázisban megtalálhatók a telephelyeket, az ott dolgozó alkalmazottakat, a vásárlókat, az eladásra kínált autókat, valamint az egyes eladásokat is.
+
+Táblák:
+
+1. Telephelyek
+- Itt vannak tárolva a különböző városokban található autókereskedések adatai.
+- Oszlopok: id (elsődleges kulcs), varos, cim
+- Kapcsolat: több alkalmazott és több autó is tartozhat egy telephelyhez.
+
+2. Alkalmazottak
+- A telephelyeken dolgozó eladókat tartalmazza.
+- Oszlopok: id (elsődleges kulcs), nev, email, telefonszam, telephely_id (idegen kulcs)
+- Minden alkalmazott egy telephelyhez van hozzárendelve.
+
+3. Vásárlók
+- Ide kerülnek be azok az ügyfelek, akik autót vásároltak.
+- Oszlopok: id (elsődleges kulcs), nev, email, telefonszam
+- Egy vásárló csak egyszer szerepelhet.
+
+4. Autók
+- Ezek az eladásra kínált járművek.
+- Oszlopok: id (elsődleges kulcs), marka, modell, evjarat, szin, ar, telephely_id (idegen kulcs)
+- Minden autó egy adott telephelyen található meg.
+
+5. Eladások
+- Itt rögzítjük, ha egy autót eladtak.
+- Oszlopok: id (elsődleges kulcs), auto_id, vasarlo_id, alkalmazott_id (mindhárom idegen kulcs), eladas_datum, eladas_ar
+- A kapcsolatok alapján pontosan lekövethető, hogy melyik alkalmazott adott el melyik autót kinek, és mikor.
+
+Kapcsolatok:
+
+- Az alkalmazottak és az autók a telephelyekhez kapcsolódnak.
+- Az eladások az autókhoz, vásárlókhoz és alkalmazottakhoz kapcsolódnak.
+
+Az adatbázisban megtalálható lekérdezések:
+- 1. A lekérdezés kilistázza, hogy egyes márkákból hány autót adtak el és mennyi volt az átlagos eladási ár kerekítve.
+- 2. A lekérdezés megmutatja a TOP 3 alkalmazottat, akik a legtöbb autót adták el.
+- 3. A lekérdezés kilistázza azt, hogy bizonyos autó árkategóriákon belül hány darab autó van.
+- 4. A lekérdezés kilistázza azt az öt autót, amik az elmúlt hat hónapban vásárolt legdrágább kocsik.
+- 5. A lekérdezés kilistázza, hogy telephelyenként mennyi autót adtak el és összesen mennyi értékben. Emellett mutat egy összesítést is.

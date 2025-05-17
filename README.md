@@ -2,4 +2,4 @@
 Csoporttagok:
 - Szuhóczky Máté (NQDMUK)
 - Durugy Andrea (ECZI7B)
-- Varga Ákos
+- Varga Ákos (DNNDFT)
